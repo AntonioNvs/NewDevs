@@ -19,7 +19,10 @@ def politics():
         a = news.find('a')
         img = news.findAll('img')
         img = img[-1]
-        description = news.find(attrs={'class': 'feed-post-body-resumo'}).text
+
+        descrip = news.find(attrs={'class': 'feed-post-body-resumo'})
+
+        description = descrip.text if descrip is not None else ''
 
 
         dictionaty = {
